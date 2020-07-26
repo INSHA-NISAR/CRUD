@@ -43,13 +43,30 @@
 
             </div>
              <br>
-             <label > username </label>
-             <input type="text" name="username" class="form-control" required><br>
-             <label > password </label>
-             <input type="text" name="password" class="form-control" required><br>
-             <br>
-             <button class="btn btn-success" type="submit" name="done">Submit</button>
-             <br>
+            <?php
+                  $id=$_GET['id'];
+                  $q ="select  Username,Password from test_crud WHERE id=$id  ";
+                  $query= mysqli_query($conn, $q);
+                  $result = $conn->query($q);
+
+                     if ($result->num_rows >0) {
+                       // output data of each row
+                       if($row = $result->fetch_assoc()) {
+                                              
+              ?>
+
+                        <label > <?php echo  "Current username : " . $row["Username"] ;?> </label>
+                        <input type="text" name="username" class="form-control" required><br>
+                        <label > <?php  echo " Current Password : " . $row["Password"] ;?> </label>
+                        <input type="text" name="password" class="form-control" required><br><br>
+                        
+                          <?php
+                                }
+                                  }
+                                      
+                          ?>
+                       <button class="btn btn-success" type="submit" name="done">Submit</button><br>
+                        
         </div>
     
      </form> 
