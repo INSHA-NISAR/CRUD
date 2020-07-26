@@ -1,10 +1,10 @@
 <?php
 
 session_start();
-$server="cloud.sistec.ac.in";
-$username="0187cs181063";
-$password="sistec";
-$database="0187cs181063";
+$server="***************";
+$username="*********";
+$password="********";
+$database="*********8";
 
 $conn = mysqli_connect($server,$username,$password,$database);
 
