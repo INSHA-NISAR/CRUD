@@ -4,7 +4,7 @@ session_start();
 $server="***************";
 $username="*********";
 $password="********";
-$database="*********8";
+$database="*********";
 
 $conn = mysqli_connect($server,$username,$password,$database);
 
